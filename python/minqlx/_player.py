@@ -404,7 +404,7 @@ class Player():
         elif new_weapon in minqlx.WEAPONS:
             pass
         elif new_weapon in minqlx.WEAPONS.values():
-            new_weapon = tuple(minqlx.WEAPONS.values()).index(new_weapon)
+            new_weapon = [weapon_index for weapon_index, descriptor in minqlx.WEAPONS.items() if descriptor == new_weapon][0]
 
         return minqlx.set_weapon(self.id, new_weapon)
 
